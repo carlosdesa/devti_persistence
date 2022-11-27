@@ -33,7 +33,9 @@ public class CityResource {
     @DeleteMapping("/{id}")
     @ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Removeu cidade com sucesso"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
+    		@ApiResponse(code = 404, message = "Cidade não encontrada"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
     @ApiOperation(value = "Remove cidade")
@@ -44,7 +46,9 @@ public class CityResource {
     @PutMapping
     @ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Alteração de cidade feita com sucesso"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
+    		@ApiResponse(code = 404, message = "Cidade não encontrada"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
     @ApiOperation(value = "Altera cidade")
@@ -56,6 +60,7 @@ public class CityResource {
     @PostMapping
     @ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Inseriu cidade com sucesso"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
@@ -67,7 +72,9 @@ public class CityResource {
     @GetMapping
     @ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Retornou lista de cidades"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
+    		@ApiResponse(code = 404, message = "Cidade não encontrada"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
     @ApiOperation(value = "Lista cidades")
@@ -78,7 +85,9 @@ public class CityResource {
     @GetMapping("/busca-uf/{uf}")
     @ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Retornou cidade por UF"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
+    		@ApiResponse(code = 404, message = "Cidade não encontrada"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
     @ApiOperation(value = "Busca cidade por UF")

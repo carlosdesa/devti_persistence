@@ -31,6 +31,8 @@ public class ClientResource {
 	@ApiOperation(value = "Remove cliente")
 	@ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Removeu cliente com sucesso"),
+    		@ApiResponse(code = 204, message = "Nenhum conteúdo"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
@@ -41,7 +43,9 @@ public class ClientResource {
 	@PutMapping
 	@ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Alteração de cliente feita com sucesso"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
+    		@ApiResponse(code = 404, message = "Cliente não encontrado"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
 	@ApiOperation(value = "Altera cliente")
@@ -53,6 +57,7 @@ public class ClientResource {
 	@PostMapping
 	@ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Inseriu cliente com sucesso"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
@@ -64,6 +69,7 @@ public class ClientResource {
 	@GetMapping
 	@ApiResponses(value = {
     		@ApiResponse(code = 200, message = "Retornou lista de clientes"),
+    		@ApiResponse(code = 401, message = "Sem autorização"),
     		@ApiResponse(code = 403, message = "Sem permissão"),
     		@ApiResponse(code = 500, message = "Exceção")
     })
@@ -75,7 +81,9 @@ public class ClientResource {
 	@GetMapping("/busca-por-cidade/{cidade}")
 	 @ApiResponses(value = {
 	    		@ApiResponse(code = 200, message = "Retornou cliente por UF"),
+	    		@ApiResponse(code = 401, message = "Sem autorização"),
 	    		@ApiResponse(code = 403, message = "Sem permissão"),
+	    		@ApiResponse(code = 404, message = "Nenhum cliente encontrado para cidade informada"),
 	    		@ApiResponse(code = 500, message = "Exceção")
 	    })
 	@ApiOperation(value = "Busca cliente por cidade")
